@@ -8,13 +8,14 @@ Basic streaming xml parser based on transform streams. It recieves `ReadableStre
 string -> Token -> Node
 ```
 
-`id` and `parent id` of nodes is `number[]`. They contains encoded position in tree structure and can be used to recreate tree from output node stream. Kinda suffix tree i guess.
+`id` and `parent id` of nodes is `number[]`. They contains encoded position in tree structure and can be used to recreate tree from output
+node stream. Kinda suffix tree i guess.
 
 ### Example
 
 ```ts
 import { Tokenizer } from "../src/tokenizer.ts";
-import { Node, StateMachine } from "../src/state.ts";
+import { StateMachine } from "../src/state.ts";
 
 const input = Deno.readTextFileSync("./test/sample.xml");
 
@@ -32,8 +33,6 @@ for (const char of input.split("")) {
 }
 
 writer.close();
-
-const out: Node[] = [];
 
 for await (const node of state.readable) {
   console.log(node);
