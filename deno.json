@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "importMap": "./import_map.json",
+  "tasks": {
+    "start": "deno run -A ./src/main.ts",
+    "dev": "deno run -A --watch ./src/main.ts"
+  },
+  "fmt": {
+    "options": {
+      "lineWidth": 140
+    }
+  }
+}

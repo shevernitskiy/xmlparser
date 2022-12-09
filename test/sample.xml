@@ -1,0 +1,58 @@
+<metadata>
+	<oneline hello="world"/>
+	<release>
+		<title>War</title>
+		<track-list count="10" year="2003">
+			<track>
+				<number>1</number>
+				<length>280173</length>
+				<title>Sunday Bloody Sunday</title>
+			</track>
+			<track>
+				<number>2</number>
+				<title>Seconds</title>
+				<length>190533</length>
+			</track>
+			<track>
+				<number>3</number>
+				<length>335693</length>
+				<title>New Year's Day</title>
+			</track>
+			<track>
+				<number>4</number>
+				<length>286933</length>
+				<title>Like a Song...</title>
+			</track>
+			<track>
+				<number>5</number>
+				<length>254973</length>
+				<title>Drowning Man</title>
+			</track>
+			<track>
+				<number>6</number>
+				<length>220866</length>
+				<title>The Refugee</title>
+			</track>
+			<track>
+				<number>7</number>
+				<length>243093</length>
+				<title>Two Hearts Beat as One</title>
+			</track>
+			<track>
+				<number>8</number>
+				<length>226400</length>
+				<title>Red Light</title>
+			</track>
+			<track>
+				<number>9</number>
+				<length>334440</length>
+				<title>Surrender</title>
+			</track>
+			<track>
+				<number>10</number>
+				<length>155893</length>
+				<title>"40"</title>
+			</track>
+		</track-list>
+	</release>
+</metadata>
