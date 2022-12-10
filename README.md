@@ -14,29 +14,28 @@ node stream. Kinda suffix tree i guess.
 ### Example
 
 ```ts
-import { Tokenizer } from "../src/tokenizer.ts";
-import { StateMachine } from "../src/state.ts";
+import { Parser } from "../src/parser.ts";
 
 const input = Deno.readTextFileSync("./test/sample.xml");
 
-const tokenizer = new Tokenizer();
-const state = new StateMachine();
-tokenizer.readable.pipeThrough(state);
+const parser = new Parser();
 
-const writer = tokenizer.writable.getWriter();
+(async function () {
+  for await (const node of parser.readable) {
+    console.log(node);
+  }
+})();
+
+const writer = parser.writable.getWriter();
 
 writer.write(input);
 
 // or char by char
-for (const char of input.split("")) {
-  writer.write(char);
-}
+// for (const char of input.split("")) {
+//   writer.write(char);
+// }
 
 writer.close();
-
-for await (const node of state.readable) {
-  console.log(node);
-}
 ```
 
 <details>

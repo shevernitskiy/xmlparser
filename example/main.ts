@@ -1,13 +1,16 @@
-import { Tokenizer } from "../src/tokenizer.ts";
-import { Node, StateMachine } from "../src/state.ts";
+import { Parser } from "../src/parser.ts";
 
 const input = Deno.readTextFileSync("./test/sample.xml");
 
-const tokenizer = new Tokenizer();
-const state = new StateMachine();
-tokenizer.readable.pipeThrough(state);
+const parser = new Parser();
 
-const writer = tokenizer.writable.getWriter();
+(async function () {
+  for await (const node of parser.readable) {
+    console.log(node);
+  }
+})();
+
+const writer = parser.writable.getWriter();
 
 writer.write(input);
 
@@ -17,11 +20,3 @@ writer.write(input);
 // }
 
 writer.close();
-
-const out: Node[] = [];
-
-for await (const node of state.readable) {
-  console.log(node);
-}
-
-
